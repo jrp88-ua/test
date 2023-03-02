@@ -22,12 +22,11 @@ jobs:
 
       - name: Run unit Test
         run: ./gradlew testDebugUnitTest
-        continue-on-error: true
+        # continue-on-error: true
 
       - name: Android Test Report
         uses: asadmansr/android-test-report-action@v1.2.0
         # if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
-        continue-on-error: true
 
       - name: Fail if tests failed
         if: steps.check-test-results.outputs.tests_failed == 'true'
