@@ -17,10 +17,10 @@ jobs:
         with:
           java-version: '1.8'
 
-      - name: Unit Test
+      - name: Run unit Test
         run: ./gradlew testDebugUnitTest
         continue-on-error: true
 
       - name: Android Test Report
         uses: asadmansr/android-test-report-action@v1.2.0
-        if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
+        # if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
